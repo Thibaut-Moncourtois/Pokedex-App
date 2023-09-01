@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import LogoPokemon from '@assets/logopokemon.png';
 import { Pokemon } from '../interface';
-import './App.css';
 import '../Pokemon.css';
-import PokemonCollection from './PokemonCollection';
+import HeaderPokedex from '../Header/HeaderPokedex';
+import Nav from '../Nav/Nav';
+import PokemonCollection from '../PokemonCollection/PokemonCollection';
 
 interface Pokemons {
   name: string;
@@ -49,7 +49,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="pokemon-header">{LogoPokemon}</header>
+      <HeaderPokedex />
+      <Nav />
       <PokemonCollection pokemons={pokemons} />
       <button onClick={nextPage}>Charger</button>
     </div>

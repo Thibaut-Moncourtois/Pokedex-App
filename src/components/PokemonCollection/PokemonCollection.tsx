@@ -1,6 +1,6 @@
 import React from 'react';
 import { Pokemon } from '../interface';
-import PokemonList from './PokemonList';
+import PokemonList from '../PokemonList/PokemonList';
 
 interface Props {
   pokemons: Pokemon[];

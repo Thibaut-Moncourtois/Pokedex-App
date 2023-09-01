@@ -10,3 +10,8 @@ export interface Pokemon {
     };
   }[];
 }
+
+export interface TypePokemon {
+  name: string;
+  url: string;
+}
