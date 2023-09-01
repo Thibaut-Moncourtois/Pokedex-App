@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { TypePokemon } from '../interface';
+import { NavProps } from '../interface';
 
-const Nav = () => {
+const Nav = ({ setSelectedType }: NavProps) => {
   const [types, setTypes] = useState<TypePokemon[]>([]);
 
   useEffect(() => {

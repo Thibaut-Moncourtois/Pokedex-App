@@ -1,11 +1,18 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
+
+// TS
 import { Pokemon } from '../interface';
+
+// Styles
 import '../Pokemon.css';
+
+// Components
 import HeaderPokedex from '../Header/HeaderPokedex';
 import Nav from '../Nav/Nav';
 import PokemonCollection from '../PokemonCollection/PokemonCollection';
 
+// Cette interface pourrait aller dans le fichier interface.ts
 interface Pokemons {
   name: string;
   url: string;
@@ -13,46 +20,39 @@ interface Pokemons {
 
 function App() {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-  const [nextUrl, setNexUrl] = useState<string>('');
+  // const [nextUrl, setNextUrl] = useState<string>('');
+  const [selectedType, setSelectedType] = useState<string>('');
 
+  // Appel API à l'initialisation de l'app
   useEffect(() => {
     const getPokemon = async () => {
+      // Je récupère la TOTALITE des pokemons de l'API
       const res = await axios.get(
-        'https://pokeapi.co/api/v2/pokemon?limit=20&offset=20'
+        'https://api-pokemon-fr.vercel.app/api/v1/pokemon?limit=20'
       );
 
-      setNexUrl(res.data.next);
+      // Correspond au nombre de pokemons que je veux faire apparaître
+      const max = 20;
 
-      res.data.results.forEach(async (pokemon: Pokemons) => {
-        const poke = await axios.get(
-          `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
-        );
-        setPokemons((p) => [...p, poke.data]);
-      });
+      // Parmi les résultats de la requête ci-dessus, je prend (slice) seulement les 20 premiers
+      const pokemonsSliced = res.data.slice(1, max);
+
+      // Je set ma variable d'état pokemons avec le résultat de ma const pokemonsSliced
+      setPokemons(pokemonsSliced);
     };
 
     getPokemon();
   }, []);
 
-  const nextPage = async () => {
-    let res = await axios.get(nextUrl);
-
-    setNexUrl(res.data.next);
-
-    res.data.results.forEach(async (pokemon: Pokemons) => {
-      const poke = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
-      );
-      setPokemons((p) => [...p, poke.data]);
-    });
-  };
-
   return (
     <div className="App">
       <HeaderPokedex />
-      <Nav />
+      {/* <Nav setSelectedType={setSelectedType} /> */}
       <PokemonCollection pokemons={pokemons} />
-      <button onClick={nextPage}>Charger</button>
+      {/* Créer une callback handleClick qui change l'état du nombre de pokemon que l'on souhaite filtrer de notre premier appel API.
+      Indice : useState...
+      */}
+      <button onClick={}>Charger</button>
     </div>
   );
 }
