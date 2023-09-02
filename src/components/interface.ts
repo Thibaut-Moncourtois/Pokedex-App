@@ -19,3 +19,12 @@ export interface TypePokemon {
 export interface NavProps {
   setSelectedType: React.Dispatch<React.SetStateAction<string>>;
 }
+
+export interface Pokemons {
+  name: string;
+  url: string;
+}
+
+export interface PokemonCollectionProps {
+  pokemons: Pokemon[];
+}

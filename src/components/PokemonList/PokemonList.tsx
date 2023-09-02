@@ -1,4 +1,5 @@
 import React from 'react';
+import { Pokemon } from '../interface';
 
 interface Props {
   name: string;

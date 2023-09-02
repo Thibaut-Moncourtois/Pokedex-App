@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 // TS
-import { Pokemon } from '../interface';
-
+import { Pokemon, Pokemons } from '../interface';
 // Styles
 import '../Pokemon.css';
 
@@ -11,12 +10,6 @@ import '../Pokemon.css';
 import HeaderPokedex from '../Header/HeaderPokedex';
 import Nav from '../Nav/Nav';
 import PokemonCollection from '../PokemonCollection/PokemonCollection';
-
-// Cette interface pourrait aller dans le fichier interface.ts
-interface Pokemons {
-  name: string;
-  url: string;
-}
 
 function App() {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
@@ -28,13 +21,13 @@ function App() {
     const getPokemon = async () => {
       // Je récupère la TOTALITE des pokemons de l'API
       const res = await axios.get(
-        'https://api-pokemon-fr.vercel.app/api/v1/pokemon?limit=20'
+        'https://api-pokemon-fr.vercel.app/api/v1/pokemon?limit=50'
       );
 
       // Correspond au nombre de pokemons que je veux faire apparaître
-      const max = 20;
+      const max = 50;
 
-      // Parmi les résultats de la requête ci-dessus, je prend (slice) seulement les 20 premiers
+      // Parmi les résultats de la requête ci-dessus, je prend (slice) seulement les 50 premiers
       const pokemonsSliced = res.data.slice(1, max);
 
       // Je set ma variable d'état pokemons avec le résultat de ma const pokemonsSliced
@@ -52,7 +45,7 @@ function App() {
       {/* Créer une callback handleClick qui change l'état du nombre de pokemon que l'on souhaite filtrer de notre premier appel API.
       Indice : useState...
       */}
-      <button onClick={}>Charger</button>
+      <button>Charger</button>
     </div>
   );
 }

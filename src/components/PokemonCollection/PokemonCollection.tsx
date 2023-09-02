@@ -1,10 +1,7 @@
 import React from 'react';
 import { Pokemon } from '../interface';
 import PokemonList from '../PokemonList/PokemonList';
-
-interface PokemonCollectionProps {
-  pokemons: Pokemon[];
-}
+import { PokemonCollectionProps } from '../interface';
 
 function PokemonCollection({ pokemons }: PokemonCollectionProps) {
   console.log(pokemons);
