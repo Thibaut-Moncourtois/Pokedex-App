@@ -5,9 +5,7 @@ export interface Pokemon {
     front_default: string;
   };
   types: {
-    type: {
-      name: string;
-    };
+    name: string;
   }[];
 }
 

@@ -1,17 +1,28 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const PokemonTypes = () => {
+type Props = {
+  onChangeType: (type: string) => void;
+};
+
+const PokemonTypes = ({ onChangeType }: Props) => {
   const [types, setTypes] = useState<TypePokemon[]>([]);
+
+  const changeTypeHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedType = event.target.value;
+    onChangeType(selectedType);
+  };
 
   useEffect(() => {
     axios
-      .get('https://pokeapi.co/api/v2/type')
+      .get('https://api-pokemon-fr.vercel.app/api/v1/types') //'https://pokeapi.co/api/v2/type'
       .then((res) => {
-        setTypes(res.data.results);
+        console.log({ res: res.data });
+
+        setTypes(res.data);
       })
       .catch((error) => {
-        console.log(error);
+        console.log({ error });
       });
   }, []);
 
@@ -22,14 +33,15 @@ const PokemonTypes = () => {
           Types
         </span>
         <select
+          onChange={changeTypeHandler}
           title="Type"
           className="py-2 border border-gray-500 px-20 rounded-md "
           name="Type"
           id="type"
         >
           {types.map((type, index) => (
-            <option key={index} value={type.name}>
-              {type.name}
+            <option key={index} value={type.name.fr}>
+              {type.name.fr}
             </option>
           ))}
         </select>
