@@ -10,6 +10,7 @@ import '../Pokemon.css';
 import HeaderPokedex from '../Header/HeaderPokedex';
 import Nav from '../Nav/Nav';
 import PokemonCollection from '../PokemonCollection/PokemonCollection';
+import PokemonTypes from '../PokemonTypes/PokemonTypes';
 
 function App() {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
@@ -40,6 +41,7 @@ function App() {
   return (
     <div className="App">
       <HeaderPokedex />
+      <PokemonTypes />
       {/* <Nav setSelectedType={setSelectedType} /> */}
       <PokemonCollection pokemons={pokemons} />
       {/* Créer une callback handleClick qui change l'état du nombre de pokemon que l'on souhaite filtrer de notre premier appel API.
