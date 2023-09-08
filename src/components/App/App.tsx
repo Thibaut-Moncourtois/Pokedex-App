@@ -8,7 +8,6 @@ import '../Pokemon.css';
 
 // Components
 import HeaderPokedex from '../Header/HeaderPokedex';
-import Nav from '../Nav/Nav';
 import PokemonCollection from '../PokemonCollection/PokemonCollection';
 import PokemonTypes from '../PokemonTypes/PokemonTypes';
 
