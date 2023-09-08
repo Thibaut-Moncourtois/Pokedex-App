@@ -11,6 +11,7 @@ import HeaderPokedex from '../Header/HeaderPokedex';
 import PokemonCollection from '../PokemonCollection/PokemonCollection';
 import PokemonTypes from '../PokemonTypes/PokemonTypes';
 import SearchBar from '../SearchBar/SearchBar';
+import Footer from '../Footer/Footer';
 
 function App() {
   const [pokemonsToDisplay, setPokemonsToDisplay] = useState<Pokemon[]>([]);
@@ -55,7 +56,7 @@ function App() {
       <HeaderPokedex onChangeType={setSelectedType} />
       <SearchBar />
       <PokemonTypes onChangeType={setSelectedType} />
-      <PokemonCollection pokemons={pokemonsToDisplay} />
+      <PokemonCollection pokemons={pokemonsToDisplay} name={''} />
       <div className="flex justify-center">
         <button
           className="bg-purple-900 text-white hover:bg-blue-400 font-bold py-2 px-4 mt-3 rounded flex items-center"
@@ -66,6 +67,7 @@ function App() {
           Charger
         </button>
       </div>
+      <Footer />
     </div>
   );
 }
