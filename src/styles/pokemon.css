@@ -25,32 +25,6 @@
   border-radius: 12px;
 }
 
-.btn {
-  width: 50%;
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: space-around;
-}
-
-button {
-  cursor: pointer;
-  background-color: white;
-  color: #3d405b;
-  padding: 0.5rem;
-  border-radius: 12px;
-  font-size: 1.5rem;
-  border: none;
-  transition: 200ms ease-in-out;
-}
-button:hover {
-  cursor: pointer;
-  color: #3d405b;
-  padding: 0.5rem;
-  border-radius: 12px;
-  font-size: 1.5rem;
-  border: none;
-}
-
 .rock {
   background-color: rgb(148, 81, 81);
 }

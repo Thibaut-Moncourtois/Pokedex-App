@@ -59,7 +59,11 @@ function App() {
       <PokemonCollection pokemons={pokemonsToDisplay} name={''} />
       <div className="flex justify-center">
         <button
-          className="bg-purple-900 text-white hover:bg-blue-400 font-bold py-2 px-4 mt-3 rounded flex items-center"
+          className="bg-indigo-500 text-white py-2 px-8 leading-6 rounded-full flex 
+          items-center font-semibold tracking-wide cursor-pointer relative shadow
+          transition hover:bg-amber-400 hover:shadow-md
+          outline-none ring-amber-500/70 ring-offset-2
+          focus-visible:ring-2 focus:scale-[0.98]"
           onClick={() =>
             setNumberPokemonsToDisplay(numberPokemonsToDisplay + 50)
           }
