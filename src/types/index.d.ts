@@ -31,6 +31,7 @@ export interface Pokemons {
 
 export interface PokemonCollectionProps {
   pokemons: Pokemon[];
+  name: string;
 }
 
 export interface PokemonTypesProps {
