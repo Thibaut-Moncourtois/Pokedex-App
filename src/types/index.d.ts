@@ -1,16 +1,22 @@
 export interface Pokemon {
   id: number;
-  name: string;
+  name: lang;
   sprites: {
     front_default: string;
+    regular: string;
   };
   types: {
     name: string;
   }[];
+  pokedexId: number;
+}
+
+interface lang {
+  fr: string;
 }
 
 export interface TypePokemon {
-  name: string;
+  name: lang;
   url: string;
 }
 
@@ -25,4 +31,8 @@ export interface Pokemons {
 
 export interface PokemonCollectionProps {
   pokemons: Pokemon[];
+}
+
+export interface PokemonTypesProps {
+  onChangeType: (type: string) => void;
 }

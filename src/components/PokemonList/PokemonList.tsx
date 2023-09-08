@@ -1,18 +1,17 @@
 import React from 'react';
-import { Pokemon } from '../interface';
+import { Pokemon } from '../../types';
 
-interface Props {
-  name: string;
-  id: number;
-  image: string;
-  type: string;
+interface PokemonListProps {
+  pokemon: Pokemon;
 }
 
 // Ici on vient destructure les props pour venir récupérer UNIQUEMENT le contenu / l'objet de pokemon
-function PokemonList({ pokemon }) {
+function PokemonList({ pokemon }: PokemonListProps) {
+  if (pokemon.pokedexId === 0) return null;
+
   return (
     <div>
-      <section className={`pokemon-list-container`}>
+      <section className={`pokemon-list-container min-w-[544px] min-h-[576px]`}>
         <p className="pokemon-name">{pokemon.pokedexId}</p>
         <p className="pokemon-name">{pokemon.name.fr}</p>
         <img src={pokemon.sprites.regular} alt={pokemon.name.fr} />
