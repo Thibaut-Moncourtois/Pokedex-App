@@ -74,7 +74,14 @@ function App() {
       {/* Créer une callback handleClick qui change l'état du nombre de pokemon que l'on souhaite filtrer de notre premier appel API.
       Indice : useState...
       */}
-      <button onClick={clickLoadMoreHandler}>Charger</button>
+      <div className="flex justify-center">
+        <button
+          className="bg-purple-900 text-white hover:bg-blue-400 font-bold py-2 px-4 mt-3 rounded flex items-center"
+          onClick={clickLoadMoreHandler}
+        >
+          Charger
+        </button>
+      </div>
     </div>
   );
 }
