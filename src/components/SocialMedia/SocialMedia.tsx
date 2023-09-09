@@ -5,9 +5,11 @@ function socialMedia() {
   return (
     <section className="logos">
       <div className="twitter-logo">
-        <header className="absolute top-8 left-20">
-          <img className="w-12" src={TwitterLogo} alt="logoX" />
-        </header>
+        <a href="https://twitter.com/Thibz_GD">
+          <header className="absolute top-8 left-20">
+            <img className="w-12" src={TwitterLogo} alt="logoX" />
+          </header>
+        </a>
       </div>
 
       <div className="linkedin-logo">
