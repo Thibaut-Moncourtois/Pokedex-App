@@ -1,17 +1,17 @@
-import Xlogo from '@assets/x-logo.png';
+import TwitterLogo from '@assets/twitter-logo.png';
 import LinkedInLogo from '@assets/linkedin-logo.png';
 
 function socialMedia() {
   return (
     <section className="logos">
-      <div className="x-logo">
-        <header className="absolute top-9 left-20">
-          <img className="w-9" src={Xlogo} alt="logoX" />
+      <div className="twitter-logo">
+        <header className="absolute top-8 left-20">
+          <img className="w-12" src={TwitterLogo} alt="logoX" />
         </header>
       </div>
 
       <div className="linkedin-logo">
-        <header className="absolute top-9 left-7">
+        <header className="absolute top-9 right left-8  ">
           <img className="w-10" src={LinkedInLogo} alt="LogoLinkedIn" />
         </header>
       </div>
