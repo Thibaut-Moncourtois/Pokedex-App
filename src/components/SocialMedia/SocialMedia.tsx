@@ -11,9 +11,11 @@ function socialMedia() {
       </div>
 
       <div className="linkedin-logo">
-        <header className="absolute top-9 right left-8  ">
-          <img className="w-10" src={LinkedInLogo} alt="LogoLinkedIn" />
-        </header>
+        <a href="https://www.linkedin.com/in/thibaut-moncourtois/">
+          <header className="absolute top-9 right left-8  ">
+            <img className="w-10" src={LinkedInLogo} alt="LogoLinkedIn" />
+          </header>
+        </a>
       </div>
     </section>
   );
