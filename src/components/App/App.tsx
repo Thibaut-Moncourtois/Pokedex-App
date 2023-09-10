@@ -19,6 +19,7 @@ function App() {
   const [selectedType, setSelectedType] = useState<string>('');
   const [numberPokemonsToDisplay, setNumberPokemonsToDisplay] =
     useState<number>(50);
+  const [search, setSearch] = useState<String>('');
 
   // Appel API à l'initialisation de l'app
 
@@ -46,7 +47,11 @@ function App() {
     setPokemonsToDisplay(slicedPokemon);
   };
 
-  //Faire une fonction getPokemonByName
+  const getPokemonById = () => {
+    const res = await axios.get(
+      `https://api-pokemon-fr.vercel.app/api/v1/pokemon${doQuery}`
+    );
+  };
 
   useEffect(() => {
     selectedType !== '' ? getPokemonByType() : getPokemon();
