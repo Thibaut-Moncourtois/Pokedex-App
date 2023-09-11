@@ -1,4 +1,3 @@
-import React from 'react';
 import LogoPokemon from '@assets/logopokemon.png';
 import { PokemonTypesProps } from '../../types';
 

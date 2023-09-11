@@ -7,12 +7,13 @@ import { Pokemon } from '../../types';
 import '../../styles/Pokemon.css';
 
 // Components
+import SocialMedia from '../SocialMedia/SocialMedia';
 import HeaderPokedex from '../Header/HeaderPokedex';
 import PokemonCollection from '../PokemonCollection/PokemonCollection';
 import PokemonTypes from '../PokemonTypes/PokemonTypes';
 import SearchBar from '../SearchBar/SearchBar';
 import Footer from '../Footer/Footer';
-import SocialMedia from '../SocialMedia/SocialMedia';
+import Arrow from '../Arrow/Arrow';
 
 function App() {
   const [pokemonsToDisplay, setPokemonsToDisplay] = useState<Pokemon[]>([]);
@@ -82,6 +83,7 @@ function App() {
           Charger
         </button>
       </div>
+      <Arrow />
       <Footer />
     </div>
   );
