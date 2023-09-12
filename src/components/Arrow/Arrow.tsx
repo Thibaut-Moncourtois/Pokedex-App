@@ -1,17 +1,12 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Arrow() {
+function ArrowUp() {
   return (
-    <div className="absolute right-20">
-      <FontAwesomeIcon
-        icon={faArrowUp}
-        bounce
-        size="2xl"
-        className="max-w-lg cursor-pointer"
-      />
+    <div className="absolute right-20 mb-5 cursor-pointer">
+      <FontAwesomeIcon icon={faArrowUp} bounce size="2xl" />
     </div>
   );
 }
 
-export default Arrow;
+export default ArrowUp;

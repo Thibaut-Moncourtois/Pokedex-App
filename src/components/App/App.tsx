@@ -13,14 +13,14 @@ import PokemonCollection from '../PokemonCollection/PokemonCollection';
 import PokemonTypes from '../PokemonTypes/PokemonTypes';
 import SearchBar from '../SearchBar/SearchBar';
 import Footer from '../Footer/Footer';
-import Arrow from '../Arrow/Arrow';
+import ArrowUp from '../Arrow/Arrow';
 
 function App() {
   const [pokemonsToDisplay, setPokemonsToDisplay] = useState<Pokemon[]>([]);
   const [selectedType, setSelectedType] = useState<string>('');
   const [numberPokemonsToDisplay, setNumberPokemonsToDisplay] =
     useState<number>(50);
-  const [doQuery, setDoQuery] = useState<any>(null);
+  const [arrowUp, setArrowUp] = useState(false);
 
   // Appel API à l'initialisation de l'app
 
@@ -48,16 +48,6 @@ function App() {
     setPokemonsToDisplay(slicedPokemon);
   };
 
-  const getPokemonByName = async (pokemonName: string) => {
-    const res = await axios.get(
-      `https://api-pokemon-fr.vercel.app/api/v1/types/${pokemonName}`
-    );
-
-    const pokemon = await res.data;
-
-    setDoQuery([pokemon]);
-  };
-
   useEffect(() => {
     selectedType !== '' ? getPokemonByType() : getPokemon();
   }, [selectedType, numberPokemonsToDisplay]);
@@ -83,7 +73,7 @@ function App() {
           Charger
         </button>
       </div>
-      <Arrow />
+      <ArrowUp />
       <Footer />
     </div>
   );

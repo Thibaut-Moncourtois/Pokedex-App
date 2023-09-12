@@ -37,3 +37,7 @@ export interface PokemonCollectionProps {
 export interface PokemonTypesProps {
   onChangeType: (type: string) => void;
 }
+
+export interface ArrowUp {
+  onChangeUp: (type: string) => Void;
+}
